@@ -1,4 +1,4 @@
-package pl.uni.lodz.math.morawski.marcin.person;
+package pl.uni.lodz.math.morawski.marcin.utils;
 
 public class Person {
     int id;

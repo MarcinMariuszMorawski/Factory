@@ -1,14 +1,19 @@
 package pl.uni.lodz.math.morawski.marcin;
 
-
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import pl.uni.lodz.math.morawski.marcin.factory.DaoFactory;
-import pl.uni.lodz.math.morawski.marcin.factory.IDaoFactory;
-import pl.uni.lodz.math.morawski.marcin.person.Person;
+import pl.uni.lodz.math.morawski.marcin.utils.Person;
 
 public class Main {
     public static void main(String[] args) {
-        IDaoFactory daoFactory = new DaoFactory();
+
+        DaoFactory daoFactory = new DaoFactory();
         daoFactory.setSource("Json");
         Person person = daoFactory.getPersonById(1);
+
+        Logger logger = Logger.getLogger(Main.class);
+        BasicConfigurator.configure();
+        logger.info(person.getId() + " " + person.getFirstName() + " " + person.getLastName());
     }
 }

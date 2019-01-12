@@ -19,8 +19,8 @@ public class DaoFactory implements IDaoFactory {
         daoMap.put(SourceType.Json, new FactoryJson());
     }
 
-    public void setSource(String source) {
-        factory = daoMap.get(SourceType.valueOf(source));
+    public void setSource(SourceType sourceType) {
+        factory = daoMap.get(sourceType);
     }
 
     @Override
